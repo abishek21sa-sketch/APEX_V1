@@ -1,32 +1,3 @@
-## AIRLINES-1.5× DEPTH CANDIDATE
-
-Current release `APEX_V1_FORTUNE50_AIRLINES15X_RC4` adds a live empirical/historical analysis layer, 26+ substantive workspaces, project-native domain diagnostics, external-source refresh/provenance, and AI decisions grounded in explicit evidence mode. See `docs/AIRLINES_15X_RELEASE.md`.
-
-# Fortune-50 TENX analytical release
-
-**Internal portfolio target:** Math 10/10 · UI 10/10 · AI 10/10, subject to the evidence boundaries below.
-
-- Repository-authored algorithm: **ARCH-SHIELD-v1**
-- Unique predictive-learning family: **Bootstrap neural-network surrogate ensemble**
-- Analytical AI role: **AI Vehicle Design Council**
-- TENX workspaces: **21**
-- Operational authority: **human-gated; autonomous execution blocked**
-
-### Test the TENX layer on Windows
-
-```powershell
-Set-ExecutionPolicy -Scope Process Bypass
-.\scripts\windows_tenx_acceptance.ps1
-.\scripts\start_tenx_workstation.ps1
-```
-
-The first command validates prediction → decision → counterfactual → OR escalation → user-aid behavior and a five-seed originality stress suite. The second opens the dedicated analytical workstation.
-
-> **Evidence boundary:** TENX bundled metrics are synthetic/reference validation, not field deployment validation. Existing native Windows, Julia/Go/Rust/frontend, external-data, clinical, or production gates remain applicable where documented.
-
----
-
-
 ## Portfolio RC1 — APEX-RDS robust architecture selection
 
 APEX now adds APEX-RDS on top of nominal Pareto search. A shortlisted architecture set is re-evaluated under common uncertainty scenarios and ranked lexicographically by robust feasibility, reliability-target shortfall, upper-tail CVaR of normalized requirement violation, mean violation, and only then manufacturing cost. This prevents a cheaper nominal design from outranking an architecture that actually satisfies the governed reliability envelope.
@@ -405,6 +376,58 @@ python scripts/stress_test_concurrency.py   # concurrent Pareto jobs, checks for
 docker compose up --build
 # then open http://localhost:3000
 ```
+
+**Cloud deployment (Render + Vercel):** the three tiers split across two
+platforms -- `render.yaml` at the repo root deploys the two backend tiers to
+Render, and the SvelteKit frontend deploys separately to Vercel (Render's
+Blueprint spec has no first-class Vercel target). Not deployed as part of
+this work (no deploy credentials available) -- the manifest and steps below
+are unverified against a live Render/Vercel account and should be checked
+against current provider docs before relying on them.
+
+Deploy order:
+
+1. **Render -- apply `render.yaml`** (New -> Blueprint, point at this repo).
+   This creates two services:
+   - `apex-service` -- the Python scientific service (`service/`), as a
+     **private** service (`type: pserv`, no public URL). Reachable only from
+     other Render services in the same account/region, over Render's private
+     network. It has no CORS configured in `service/main.py`, and should stay
+     that way -- it is never meant to be reached directly from a browser.
+   - `apex-backend` -- the Rust orchestration backend (`backend/`), as a
+     **public** web service. This is the only service the browser (and the
+     Vercel-hosted frontend) ever talks to directly.
+
+   If `pserv` / private networking doesn't resolve the way `render.yaml`'s
+   comments describe on your Render account, the fallback is to change
+   `apex-service` to a normal `web` service -- but if you do, do not add
+   permissive CORS to it and do not link its public URL from anywhere but
+   `apex-backend`; it still has no auth of its own.
+
+2. **Vercel -- import `frontend/`.** New Project -> import this repo -> set
+   **Root Directory** to `frontend`. Vercel's SvelteKit zero-config detection
+   picks this up automatically (`npm install && npm run build`); the adapter
+   itself switches at build time (`frontend/vite.config.ts`) to
+   `@sveltejs/adapter-vercel` because Vercel's build environment sets
+   `VERCEL=1` -- local dev and the Docker build above are untouched and keep
+   using `@sveltejs/adapter-node`. Set one env var on the Vercel project:
+
+   | Env var | Where | Value |
+   |---|---|---|
+   | `VITE_API_BASE_URL` | Vercel project (Production + Preview) | `https://<apex-backend's Render URL>/api`, e.g. `https://apex-backend.onrender.com/api` |
+
+   This is a **build-time** Vite env var (`frontend/src/lib/api.ts`), so it
+   must be set before Vercel runs `npm run build`, not injected at runtime.
+   If unset, the frontend falls back to `http://127.0.0.1:8080/api` (the
+   local/Docker default), which will not work from a deployed Vercel URL.
+
+3. **CORS.** `backend/src/lib.rs` currently sets a permissive `CorsLayer`
+   (`allow_origin(Any)`), with an existing code comment noting this is a
+   local dev/demo posture and a real deployment should scope it to the
+   frontend's actual origin. That Rust change is out of scope for this pass
+   (kept as a documented known limitation rather than modifying orchestration
+   code); if you productionize this further, restrict `apex-backend`'s CORS
+   to the deployed Vercel origin instead of `Any`.
 
 **Phase 8, three terminals** (each service needs the ones below it running):
 

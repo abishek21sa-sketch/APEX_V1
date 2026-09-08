@@ -1,0 +1,73 @@
+# Render Blueprint for APEX's two backend tiers.
+#
+# What this deploys:
+#   - apex-service: the Python/FastAPI scientific service (service/), as a
+#     PRIVATE service (`type: pserv`) -- no public URL. Render's private
+#     services are reachable only from other services in the same
+#     account/region, over Render's private network, at
+#     `http://<service-name>:<port>` (the hostname is literally the `name`
+#     below). This service has no CORS configured in service/main.py on
+#     purpose -- it is never meant to be reached cross-origin from a browser.
+#   - apex-backend: the Rust/Axum orchestration backend (backend/), as a
+#     PUBLIC web service (`type: web`). This is the only service the browser
+#     (and the Vercel-hosted SvelteKit frontend) ever talks to directly.
+#
+# The SvelteKit frontend (frontend/) is deployed separately to Vercel -- see
+# README's "Cloud Deployment" section for those steps. It is not part of this
+# Blueprint because Render's Blueprint spec has no first-class Vercel target.
+#
+# DEPLOY ORDER: apply this Blueprint first (Render resolves the
+# apex-backend -> apex-service env var link automatically, regardless of
+# which finishes building first), then import frontend/ into Vercel and
+# point it at apex-backend's public URL (see README).
+#
+# CONFIDENCE NOTE: this was authored without Render deploy credentials to
+# verify against, per this task's constraints. `type: pserv` and Docker-based
+# services (`env: docker` / dockerfilePath / dockerContext) are long-standing,
+# well-documented Render Blueprint features, but Render's exact field names
+# have shifted over time (e.g. `env` vs a newer `runtime` key) -- confirm the
+# current key names against Render's own Blueprint reference at deploy time,
+# and adjust if Render's validator rejects a field here. If `pserv` /
+# private networking doesn't resolve as expected, the documented fallback
+# (see README) is to make apex-service a normal `web` service instead --
+# but if you do that, do NOT add permissive CORS to it and do not link its
+# public URL from anywhere but apex-backend.
+
+services:
+  - type: pserv
+    name: apex-service
+    env: docker
+    dockerfilePath: ./service/Dockerfile
+    dockerContext: .
+    plan: starter
+    envVars:
+      # Optional: /agent/chat degrades to a clear 401 rather than crashing if
+      # this is unset (service/main.py's documented design) -- set it in the
+      # Render dashboard (sync: false means Render won't store a value for
+      # it in this file).
+      - key: ANTHROPIC_API_KEY
+        sync: false
+
+  - type: web
+    name: apex-backend
+    env: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: .
+    plan: starter
+    healthCheckPath: /api/health
+    envVars:
+      - key: APEX_BACKEND_PORT
+        value: "8080"
+      # Internal URL of apex-service on Render's private network. Render
+      # private-service hostnames equal the service `name` above. If your
+      # Render account/region needs the dynamic form instead of this literal,
+      # replace with:
+      #   fromService:
+      #     name: apex-service
+      #     type: pserv
+      #     property: host
+      # and confirm the result is still a full "http://host:port" string --
+      # main.rs (backend/src/main.rs) passes APEX_PYTHON_SERVICE_URL straight
+      # to reqwest as a URL, so it needs the scheme.
+      - key: APEX_PYTHON_SERVICE_URL
+        value: http://apex-service:8001

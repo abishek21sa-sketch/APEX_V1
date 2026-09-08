@@ -5,7 +5,14 @@
 // backend/src/handlers.rs's module doc for why neither tier duplicates Python's
 // domain schemas as its own source of truth).
 
-const API_BASE = 'http://127.0.0.1:8080/api';
+// Local dev / docker-compose default: the browser hits the Rust backend
+// directly on localhost. For a real multi-host deployment (see README's
+// Cloud Deployment section), set VITE_API_BASE_URL at build time to the
+// deployed backend's public URL + /api (e.g.
+// https://apex-backend.onrender.com/api) -- this is a build-time Vite env
+// var, so it must be set before `npm run build` runs on Vercel, not at
+// runtime.
+const API_BASE = import.meta.env.VITE_API_BASE_URL ?? 'http://127.0.0.1:8080/api';
 
 export interface ContinuousVariable {
 	name: string;
