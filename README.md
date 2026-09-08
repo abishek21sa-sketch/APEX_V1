@@ -406,6 +406,17 @@ docker compose up --build
 # then open http://localhost:3000
 ```
 
+**Hosted deployment (Vercel + Render):**
+
+- Deploy `frontend/` as the Vercel project root.
+- Set Vercel's `VITE_API_BASE` to the Render `apex-orchestrator` URL followed
+  by `/api`.
+- Deploy the root `render.yaml` as a Render Blueprint. It creates the Python
+  scientific service and the Rust orchestration service separately.
+- Verify `/api/health` on the orchestration URL and `/health` on the Python
+  service before opening the Vercel URL. The browser should never fall back to
+  a localhost API in production.
+
 **Phase 8, three terminals** (each service needs the ones below it running):
 
 ```bash

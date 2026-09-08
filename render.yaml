@@ -1,0 +1,29 @@
+services:
+  # The scientific FastAPI tier owns the vehicle physics and optimization
+  # domain. It is separate from the public orchestration tier so slow jobs and
+  # the browser-facing contract stay independently observable.
+  - type: web
+    name: apex-scientific-service
+    runtime: python
+    plan: free
+    buildCommand: pip install -e ".[service]"
+    startCommand: uvicorn service.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: ANTHROPIC_API_KEY
+        sync: false
+
+  # The Rust tier is the only public API the Vercel frontend calls. It proxies
+  # scientific requests and owns the background Pareto job store.
+  - type: web
+    name: apex-orchestrator
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: .
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: APEX_PYTHON_SERVICE_URL
+        value: https://apex-scientific-service.onrender.com

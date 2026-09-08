@@ -5,7 +5,11 @@
 // backend/src/handlers.rs's module doc for why neither tier duplicates Python's
 // domain schemas as its own source of truth).
 
-const API_BASE = 'http://127.0.0.1:8080/api';
+// Vercel injects VITE_* variables at build time. Keep localhost as the local
+// development default, but make the deployed API an explicit environment
+// contract instead of silently sending browser requests to the user's own
+// machine.
+const API_BASE = (import.meta.env.VITE_API_BASE ?? 'http://127.0.0.1:8080/api').replace(/\/$/, '');
 
 export interface ContinuousVariable {
 	name: string;

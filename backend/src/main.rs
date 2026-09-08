@@ -15,7 +15,10 @@ async fn main() {
 
     let python_base_url =
         std::env::var("APEX_PYTHON_SERVICE_URL").unwrap_or_else(|_| "http://127.0.0.1:8001".to_string());
-    let port: u16 = std::env::var("APEX_BACKEND_PORT")
+    // Render supplies PORT dynamically. Keep APEX_BACKEND_PORT as the local
+    // Docker override so the same image works in both environments.
+    let port: u16 = std::env::var("PORT")
+        .or_else(|_| std::env::var("APEX_BACKEND_PORT"))
         .ok()
         .and_then(|p| p.parse().ok())
         .unwrap_or(8080);
