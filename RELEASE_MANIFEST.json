@@ -70,7 +70,7 @@
     },
     {
       "path": "service/main.py",
-      "sha256": "f48f0d6b43fbdb65e0dcb763cc371a89e883ca3615b34314c8ed84cef89157aa"
+      "sha256": "baf664ad94bd8887afa06262c760a286fcc9b899c1b53ce99f6255b1b95a27b9"
     }
   ],
   "claim_boundary": "Portfolio-grade analytical validation. External/domain validation and native dependency acceptance remain required where explicitly marked; autonomous operational execution is disabled.",

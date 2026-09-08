@@ -302,19 +302,15 @@ if _AGENT_AVAILABLE:
                 "mode": "review-only",
             })
             return AgentChatResponse(final_text=result["answer"], tool_calls=[], hops_used=0, forced_final=False)
-        # Checked explicitly rather than left to anthropic.Anthropic(): a missing key
-        # doesn't fail at client construction (it's lazy) or as anthropic.AuthenticationError
-        # (that's only raised for a key the API server rejects) -- it fails later, inside
-        # request-header construction, as a bare TypeError that neither except clause below
-        # catches, surfacing as an unhandled 500. Caught live: docker-compose.yml originally
-        # claimed this path "degrades to a clear error instead of crashing if unset", which
-        # was untrue until this check was added.
+        # Fail closed when no provider is configured. The deterministic copilot is
+        # intentionally available through the explicit Gemini path above; silently
+        # returning a synthetic answer here would make a missing production secret
+        # look like a successful provider-backed response.
         if not os.environ.get("ANTHROPIC_API_KEY"):
-            result = build_copilot_response(request.message, {
-                "evidence": "deterministic vehicle physics, robust checks, and surrogate comparison",
-                "mode": "review-only",
-            })
-            return AgentChatResponse(final_text=result["answer"], tool_calls=[], hops_used=0, forced_final=False)
+            raise HTTPException(
+                status_code=401,
+                detail="ANTHROPIC_API_KEY is required when Gemini is not configured",
+            )
 
         client = anthropic.Anthropic()  # reads ANTHROPIC_API_KEY from the environment
         try:
