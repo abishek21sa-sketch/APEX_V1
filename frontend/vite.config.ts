@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-node';
+import adapter from '@sveltejs/adapter-vercel';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
@@ -11,9 +11,7 @@ export default defineConfig({
 					filename.split(/[/\\]/).includes('node_modules') ? undefined : true
 			},
 
-			// adapter-node: this is deployed as a standalone Node server (see
-			// Dockerfile), not to a platform adapter-auto could detect (Vercel/
-			// Netlify/Cloudflare) -- `node build/index.js` after `npm run build`.
+			// adapter-vercel emits the serverless output expected by Vercel.
 			adapter: adapter()
 		})
 	]
