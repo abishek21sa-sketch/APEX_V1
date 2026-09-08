@@ -1,0 +1,16 @@
+{
+  "project": "APEX EV Architecture Decision Intelligence",
+  "source_provider": "US Environmental Protection Agency",
+  "source_name": "2025 Automotive Trends \u2014 MY2024 Fuel Economy & Technology Data",
+  "source_url": "https://www.epa.gov/automotive-trends/explore-automotive-trends-data",
+  "download_url": "https://www.epa.gov/system/files/other-files/2026-05/model-year-2024-fuel-economy-and-technology-data.csv",
+  "doi": "2025 EPA Automotive Trends Report",
+  "license": "US government public data; review EPA data notes",
+  "advertised": "vehicle-specific model-year 2024 fuel-economy and technology attributes",
+  "entity": "vehicle / architecture / requirement / uncertainty scenario",
+  "historical": "technology, mass, efficiency and electrification trade-space trends",
+  "case": "MY2024 EV technology benchmark and architecture gap study",
+  "refresh_required_for_real_data": true,
+  "offline_validation_mode": "repository reference evidence + source contract",
+  "provenance_rule": "Never label reference/synthetic fixtures as external observations."
+}

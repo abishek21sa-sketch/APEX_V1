@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "standard": "Fortune-50 capability evidence pack v1",
+  "project": "APEX_V1",
+  "signature_algorithm": "ARCH-SHIELD-v1",
+  "seed": 17,
+  "scenario": "fixed_reference_decision_case",
+  "baseline_comparison": {
+    "reliability_delta": 0.14,
+    "cost_delta_usd": 4000
+  },
+  "decisions": {
+    "signature": "shielded",
+    "baseline": "cheap",
+    "ablation": "cheap",
+    "sensitivity": null
+  },
+  "runtime": {
+    "reference_ms": 0.024,
+    "p25_ms": 0.018,
+    "p50_ms": 0.019,
+    "p95_ms": 0.034,
+    "repeated_runs": 25
+  },
+  "reproducibility": {
+    "same_fixture_repeated": true,
+    "deterministic_seed": 17
+  },
+  "ablation": {
+    "executed": true,
+    "meaning": "declared risk/safety/balance/criticality constraint removal"
+  },
+  "sensitivity": {
+    "executed": true,
+    "meaning": "declared budget/capacity/envelope/alpha/demand perturbation"
+  },
+  "evidence_boundary": [
+    "observed",
+    "simulated",
+    "optimized",
+    "shadow_mode",
+    "realized"
+  ],
+  "enterprise_hardening": {
+    "health_route_declared": true,
+    "request_id_or_trace_header": true,
+    "human_gate_or_machine_write_block": true,
+    "frontend_native_surface": true,
+    "signature_module_present": true,
+    "manifest_present": true,
+    "source_hash_ledger_present": true
+  },
+  "implementation_paths": {
+    "signature_module": "src/apex/robust/signature_algorithm.py",
+    "native_api_or_service": [
+      "service/main.py",
+      "frontend/src/routes/robust/+page.svelte"
+    ],
+    "native_ui": [
+      "frontend/src/routes/robust/+page.svelte",
+      "tenx_ui/index.html"
+    ]
+  }
+}

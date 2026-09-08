@@ -1,0 +1,115 @@
+{
+  "autonomous_execution": false,
+  "case_study": {
+    "algorithm": "ARCH-SHIELD-v1",
+    "assumption_boundary": "Battery usable energy, motor power, drag coefficient, frontal area and gear ratio are explicit repository assumptions used only for calibration diagnostics.",
+    "benchmark_readiness": "EXACT_PHYSICS_REQUIRED",
+    "benchmarks": [
+      {
+        "accel_abs_pct_error": 0.12816602366580881,
+        "assumptions": {
+          "battery_usable_kwh": 72.0,
+          "drag_coefficient": 0.24,
+          "frontal_area_m2": 2.78,
+          "gear_ratio": 9.0,
+          "motor_power_kw": 220.0
+        },
+        "official_0_60_s": 6.8,
+        "official_epa_range_mi": 321.0,
+        "proxy_0_60_s": 7.6715289609275,
+        "proxy_range_mi": 233.57048195351928,
+        "range_abs_pct_error": 0.27236609983327326,
+        "variant": "Model Y Rear-Wheel Drive"
+      },
+      {
+        "accel_abs_pct_error": 0.4471063050559784,
+        "assumptions": {
+          "battery_usable_kwh": 79.0,
+          "drag_coefficient": 0.24,
+          "frontal_area_m2": 2.78,
+          "gear_ratio": 9.0,
+          "motor_power_kw": 330.0
+        },
+        "official_0_60_s": 4.6,
+        "official_epa_range_mi": 327.0,
+        "proxy_0_60_s": 6.6566890032575,
+        "proxy_range_mi": 250.43581946022812,
+        "range_abs_pct_error": 0.23414122489226877,
+        "variant": "Model Y Premium AWD"
+      },
+      {
+        "accel_abs_pct_error": 0.6982750434287877,
+        "assumptions": {
+          "battery_usable_kwh": 79.0,
+          "drag_coefficient": 0.24,
+          "frontal_area_m2": 2.78,
+          "gear_ratio": 9.0,
+          "motor_power_kw": 430.0
+        },
+        "official_0_60_s": 3.3,
+        "official_epa_range_mi": 306.0,
+        "proxy_0_60_s": 5.604307643314999,
+        "proxy_range_mi": 250.53286637093018,
+        "range_abs_pct_error": 0.18126514257865955,
+        "variant": "Model Y Performance AWD"
+      }
+    ],
+    "decision_impact": "ARCH-SHIELD blocks surrogate-led architecture release when public benchmark error is outside the configured verification band.",
+    "mean_accel_abs_pct_error": 0.42451579071685835,
+    "mean_range_abs_pct_error": 0.22925748910140054,
+    "name": "Tesla Model Y Benchmark-Calibrated Architecture Study",
+    "profile": {
+      "bytes": 382,
+      "features": 9,
+      "missing_fraction": 0.0,
+      "path": "data/raw/tesla/tesla_model_y_current_specs.csv",
+      "rows": 3,
+      "sha256": "9ee3277a90f10cc3f2f8e5af30e6670a10575357ee67d19f3fac7597832c3e6f"
+    },
+    "status": "ACTIVE"
+  },
+  "claim_boundary": "Tesla public specifications are benchmark targets only. Battery, motor, drag-area and gear assumptions are repository assumptions, not Tesla proprietary parameters.",
+  "current_model_version": "public-data-backbone-1.0",
+  "dataset": "Tesla public Model Y specifications",
+  "dataset_state": "PUBLISHED_EXTERNAL_ACTIVE",
+  "generated_at_utc": "2026-09-06T16:56:52.183797+00:00",
+  "human_authority": "VEHICLE_ARCHITECTURE_REVIEW",
+  "layers": {
+    "contracts": "data/contracts",
+    "dictionaries": "data/dictionaries",
+    "processed": "data/processed",
+    "provenance": "data/provenance",
+    "raw": "data/raw",
+    "snapshots": "data/snapshots"
+  },
+  "primary_files": [
+    {
+      "bytes": 382,
+      "features": 9,
+      "missing_fraction": 0.0,
+      "path": "data/raw/tesla/tesla_model_y_current_specs.csv",
+      "rows": 3,
+      "sha256": "9ee3277a90f10cc3f2f8e5af30e6670a10575357ee67d19f3fac7597832c3e6f"
+    }
+  ],
+  "project": "APEX V1",
+  "schema_validation": "PASS",
+  "static_context_files": [
+    {
+      "bytes": 382,
+      "features": 9,
+      "missing_fraction": 0.0,
+      "path": "data/raw/tesla/tesla_model_y_current_specs.csv",
+      "rows": 3,
+      "sha256": "9ee3277a90f10cc3f2f8e5af30e6670a10575357ee67d19f3fac7597832c3e6f"
+    },
+    {
+      "bytes": 322,
+      "features": 6,
+      "missing_fraction": 0.0,
+      "path": "data/snapshots/tesla_2025_operations.csv",
+      "rows": 3,
+      "sha256": "864850490c53763954f05073b880091badf6bc9cbaf23e254d95a6ea8f17ee9c"
+    }
+  ]
+}

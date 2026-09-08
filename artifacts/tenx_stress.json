@@ -1,0 +1,109 @@
+{
+  "status": "PASS",
+  "seeds": [
+    3,
+    7,
+    11,
+    19,
+    29
+  ],
+  "decision_path_passes": 5,
+  "naive_decision_changes": 5,
+  "rows": [
+    {
+      "seed": 3,
+      "pass": true,
+      "changes_naive_decision": true,
+      "decision": {
+        "design": {
+          "name": "Balanced-Robust",
+          "battery_kwh": 91,
+          "motor_kw": 285,
+          "mass_kg": 1880,
+          "cd_a": 0.53,
+          "gear": 9.0
+        },
+        "reliability": 1.0,
+        "reliability_lcb": 0.991614581723412,
+        "robust_feasible": true,
+        "cost": 34642.396493127715
+      }
+    },
+    {
+      "seed": 7,
+      "pass": true,
+      "changes_naive_decision": true,
+      "decision": {
+        "design": {
+          "name": "Balanced-Robust",
+          "battery_kwh": 91,
+          "motor_kw": 285,
+          "mass_kg": 1880,
+          "cd_a": 0.53,
+          "gear": 9.0
+        },
+        "reliability": 1.0,
+        "reliability_lcb": 0.991614581723412,
+        "robust_feasible": true,
+        "cost": 34633.79470813424
+      }
+    },
+    {
+      "seed": 11,
+      "pass": true,
+      "changes_naive_decision": true,
+      "decision": {
+        "design": {
+          "name": "Balanced-Robust",
+          "battery_kwh": 91,
+          "motor_kw": 285,
+          "mass_kg": 1880,
+          "cd_a": 0.53,
+          "gear": 9.0
+        },
+        "reliability": 1.0,
+        "reliability_lcb": 0.991614581723412,
+        "robust_feasible": true,
+        "cost": 34617.78836097411
+      }
+    },
+    {
+      "seed": 19,
+      "pass": true,
+      "changes_naive_decision": true,
+      "decision": {
+        "design": {
+          "name": "Balanced-Robust",
+          "battery_kwh": 91,
+          "motor_kw": 285,
+          "mass_kg": 1880,
+          "cd_a": 0.53,
+          "gear": 9.0
+        },
+        "reliability": 1.0,
+        "reliability_lcb": 0.991614581723412,
+        "robust_feasible": true,
+        "cost": 34618.458846343055
+      }
+    },
+    {
+      "seed": 29,
+      "pass": true,
+      "changes_naive_decision": true,
+      "decision": {
+        "design": {
+          "name": "Balanced-Robust",
+          "battery_kwh": 91,
+          "motor_kw": 285,
+          "mass_kg": 1880,
+          "cd_a": 0.53,
+          "gear": 9.0
+        },
+        "reliability": 1.0,
+        "reliability_lcb": 0.991614581723412,
+        "robust_feasible": true,
+        "cost": 34605.70316892548
+      }
+    }
+  ]
+}

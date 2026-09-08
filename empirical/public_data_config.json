@@ -1,0 +1,29 @@
+{
+  "ptype": "apex",
+  "title": "APEX V1",
+  "dataset": "Tesla public Model Y specifications",
+  "uci_id": null,
+  "raw_dir": "tesla",
+  "primary_files": [
+    "tesla_model_y_current_specs.csv"
+  ],
+  "static": [
+    [
+      "company_public/tesla_model_y_current_specs.csv",
+      "data/raw/tesla/tesla_model_y_current_specs.csv"
+    ],
+    [
+      "company_public/tesla_2025_operations.csv",
+      "data/snapshots/tesla_2025_operations.csv"
+    ]
+  ],
+  "algorithm": "ARCH-SHIELD-v1",
+  "case": "Tesla Model Y Benchmark-Calibrated Architecture Study",
+  "authority": "VEHICLE_ARCHITECTURE_REVIEW",
+  "claim": "Tesla public specifications are benchmark targets only. Battery, motor, drag-area and gear assumptions are repository assumptions, not Tesla proprietary parameters.",
+  "static_files": [
+    "data/raw/tesla/tesla_model_y_current_specs.csv",
+    "data/snapshots/tesla_2025_operations.csv"
+  ],
+  "model_version": "public-data-backbone-1.0"
+}

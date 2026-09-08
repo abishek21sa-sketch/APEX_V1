@@ -1,0 +1,15 @@
+{
+  "project": "APEX V1",
+  "release": "APEX_V1_ENTERPRISE_RC2",
+  "phase": "ENTERPRISE_OPERABILITY_AND_DECISION_ASSURANCE",
+  "result": "PASS_WITH_DECLARED_DEPENDENCY_GATES",
+  "passed": 222,
+  "skipped": 17,
+  "failures": 0,
+  "errors": 0,
+  "scope": "Available-dependency Python suite; 17 dependency-gated tests explicitly skipped here",
+  "junit_evidence": [
+    "docs/validation/junit/apex.xml"
+  ],
+  "test_environment_boundary": "Container evidence is a pre-release gate. Target Windows enterprise acceptance remains mandatory."
+}

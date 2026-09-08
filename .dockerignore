@@ -1,0 +1,17 @@
+.venv/
+.venv-clean-test/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+scratch_dataset.csv
+
+backend/target/
+
+frontend/node_modules/
+frontend/.svelte-kit/
+frontend/build/
+
+.git/

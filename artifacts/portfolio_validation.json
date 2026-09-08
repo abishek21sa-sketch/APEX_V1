@@ -1,0 +1,147 @@
+{
+  "evidence_boundary": "Physics/simulation benchmark only; not vehicle certification.",
+  "evidence_sha256": "b19cdb7887baa6663df8f0f4953d4141f3bbae2fe036d0030f60d433ced05e82",
+  "production_claim": false,
+  "release": "APEX_PORTFOLIO_RC1",
+  "release_gate": {
+    "all_reliability_lower_bounds_meet_targets": true,
+    "autonomous_release_allowed": false,
+    "human_design_review_required": true,
+    "selected_design_confidence_certified": true,
+    "selected_design_robustly_feasible": true
+  },
+  "robust_design_selection": {
+    "cvar_alpha": 0.9,
+    "decision_policy": "Finite-sample confidence certification dominates point-estimate robust feasibility; reliability shortfall and tail violation dominate mean violation; manufacturing cost is used only after safety/performance robustness criteria.",
+    "evidence_boundary": "Scenario robustness is model-based engineering evidence, not real-world vehicle validation or certification.",
+    "method": "APEX-RDS lexicographic robust design selection with common random numbers",
+    "n_samples": 300,
+    "reliability_confidence": 0.95,
+    "scores": [
+      {
+        "candidate_index": 0,
+        "confidence_certified": false,
+        "cvar_normalized_violation": 0.8695060946218142,
+        "manufacturing_cost_usd": 27453.0,
+        "mean_normalized_violation": 0.27374168601609283,
+        "reliability_shortfall": 1.2919234460459839,
+        "requirement_reliability": {
+          "0-60 mph time": 0.09666666666666666,
+          "highway range": 0.5833333333333334
+        },
+        "requirement_reliability_lower_bound": {
+          "0-60 mph time": 0.07210300064223109,
+          "highway range": 0.5359735533117851
+        },
+        "requirement_targets": {
+          "0-60 mph time": 0.95,
+          "highway range": 0.95
+        },
+        "robustly_feasible": false,
+        "worst_normalized_violation": 1.1423915289198456
+      },
+      {
+        "candidate_index": 1,
+        "confidence_certified": false,
+        "cvar_normalized_violation": 0.0016822909652287465,
+        "manufacturing_cost_usd": 37350.0,
+        "mean_normalized_violation": 0.0016822909652287465,
+        "reliability_shortfall": 0.017091956977284495,
+        "requirement_reliability": {
+          "0-60 mph time": 0.9566666666666667,
+          "highway range": 1.0
+        },
+        "requirement_reliability_lower_bound": {
+          "0-60 mph time": 0.9329080430227155,
+          "highway range": 0.991062127824872
+        },
+        "requirement_targets": {
+          "0-60 mph time": 0.95,
+          "highway range": 0.95
+        },
+        "robustly_feasible": true,
+        "worst_normalized_violation": 0.09854352448867292
+      },
+      {
+        "candidate_index": 2,
+        "confidence_certified": true,
+        "cvar_normalized_violation": 0.0009480134980522943,
+        "manufacturing_cost_usd": 38210.0,
+        "mean_normalized_violation": 0.0009480134980522943,
+        "reliability_shortfall": 0.0,
+        "requirement_reliability": {
+          "0-60 mph time": 0.9733333333333334,
+          "highway range": 1.0
+        },
+        "requirement_reliability_lower_bound": {
+          "0-60 mph time": 0.9532949780599757,
+          "highway range": 0.991062127824872
+        },
+        "requirement_targets": {
+          "0-60 mph time": 0.95,
+          "highway range": 0.95
+        },
+        "robustly_feasible": true,
+        "worst_normalized_violation": 0.07969357232947294
+      },
+      {
+        "candidate_index": 3,
+        "confidence_certified": true,
+        "cvar_normalized_violation": 0.0003419845359117356,
+        "manufacturing_cost_usd": 38520.0,
+        "mean_normalized_violation": 0.0003419845359117356,
+        "reliability_shortfall": 0.0,
+        "requirement_reliability": {
+          "0-60 mph time": 0.9833333333333333,
+          "highway range": 1.0
+        },
+        "requirement_reliability_lower_bound": {
+          "0-60 mph time": 0.9661625272493767,
+          "highway range": 0.991062127824872
+        },
+        "requirement_targets": {
+          "0-60 mph time": 0.95,
+          "highway range": 0.95
+        },
+        "robustly_feasible": true,
+        "worst_normalized_violation": 0.0525988510127758
+      }
+    ],
+    "seed": 2026,
+    "selected_candidate": {
+      "battery_capacity_kwh": 120,
+      "battery_chemistry": "nmc",
+      "drag_coefficient": 0.2,
+      "frontal_area_m2": 2.0,
+      "gear_ratio": 10.0,
+      "motor_architecture": "pm_synchronous",
+      "motor_power_kw": 350,
+      "num_motors": "2",
+      "tire_choice": "eco_low_rolling_resistance"
+    },
+    "selected_index": 3,
+    "selected_score": {
+      "candidate_index": 3,
+      "confidence_certified": true,
+      "cvar_normalized_violation": 0.0003419845359117356,
+      "manufacturing_cost_usd": 38520.0,
+      "mean_normalized_violation": 0.0003419845359117356,
+      "reliability_shortfall": 0.0,
+      "requirement_reliability": {
+        "0-60 mph time": 0.9833333333333333,
+        "highway range": 1.0
+      },
+      "requirement_reliability_lower_bound": {
+        "0-60 mph time": 0.9661625272493767,
+        "highway range": 0.991062127824872
+      },
+      "requirement_targets": {
+        "0-60 mph time": 0.95,
+        "highway range": 0.95
+      },
+      "robustly_feasible": true,
+      "worst_normalized_violation": 0.0525988510127758
+    }
+  },
+  "status": "PASS"
+}

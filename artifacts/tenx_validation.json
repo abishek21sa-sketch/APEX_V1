@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "runtime_ms": 401.579,
+  "project": "APEX",
+  "ml_family": "Bootstrap neural-network surrogate ensemble",
+  "original_algorithm": "ARCH-SHIELD-v1",
+  "workspace_count": 34,
+  "human_authority": "VEHICLE_ARCHITECTURE_REVIEW",
+  "autonomous_execution": false,
+  "decision": {
+    "design": {
+      "name": "Balanced-Robust",
+      "battery_kwh": 91,
+      "motor_kw": 285,
+      "mass_kg": 1880,
+      "cd_a": 0.53,
+      "gear": 9.0
+    },
+    "reliability": 1.0,
+    "reliability_lcb": 0.991614581723412,
+    "robust_feasible": true,
+    "cost": 34618.458846343055
+  },
+  "counterfactual": {
+    "naive_policy": "cheapest neural-surrogate point estimate",
+    "choice": "Cost-Optimized",
+    "disagrees": true
+  }
+}

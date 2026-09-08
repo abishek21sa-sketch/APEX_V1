@@ -1,0 +1,38 @@
+{
+  "certificate_sha256": "cbc91805acf9f3609ec8cd31f37683d20b67ab7c2a91a0cbd8870a89922745a8",
+  "checks": {
+    "reference_runtime_under_30s": true,
+    "selected_build_authorization_blocked": true,
+    "selected_certificate_valid": true,
+    "tampering_detected": true,
+    "weak_shortlist_held": true
+  },
+  "claim_boundary": "Model-based vehicle architecture evidence only; prototype/production build release is blocked.",
+  "decision_state": "ENGINEERING_DESIGN_REVIEW",
+  "native_pareto_gate": "PYMOO_DEPENDENCY_REQUIRED_FOR_FULL_WINDOWS_ACCEPTANCE",
+  "phase": "ENTERPRISE_OPERABILITY_V1",
+  "runtime_seconds": 2.123488989000066,
+  "selected_score": {
+    "candidate_index": 1,
+    "confidence_certified": true,
+    "cvar_normalized_violation": 0.0006978745395179405,
+    "manufacturing_cost_usd": 37880.0,
+    "mean_normalized_violation": 0.0006978745395179405,
+    "reliability_shortfall": 0.0,
+    "requirement_reliability": {
+      "0-60 mph time": 0.9733333333333334,
+      "highway range": 1.0
+    },
+    "requirement_reliability_lower_bound": {
+      "0-60 mph time": 0.9532949780599757,
+      "highway range": 0.991062127824872
+    },
+    "requirement_targets": {
+      "0-60 mph time": 0.95,
+      "highway range": 0.95
+    },
+    "robustly_feasible": true,
+    "worst_normalized_violation": 0.05140922530165026
+  },
+  "status": "PASS"
+}

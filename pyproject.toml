@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=70", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apex-vehicle-optimization"
+version = "0.1.0"
+description = "AI + operations-research platform for vehicle-architecture design optimization"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=2.0,<2.5",
+  "scipy>=1.13,<1.19",
+  "pymoo>=0.6,<0.7",
+  "scikit-learn>=1.5,<2.0",
+  # The engineering agent is a first-class APEX capability, not an optional
+  # demo dependency. Keeping it in the default install makes the declared
+  # agent tests and the original tool-calling surface reproducible from a
+  # clean environment.
+  "anthropic>=1.0,<2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3,<10", "pytest-cov>=5,<8", "httpx>=0.27,<0.29", "psutil>=6.0,<8.0"]
+service = ["fastapi>=0.115,<0.142", "uvicorn[standard]>=0.30,<0.53"]
+agent = []
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+testpaths = ["tests"]
+addopts = "-q"

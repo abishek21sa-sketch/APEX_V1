@@ -1,0 +1,87 @@
+{
+  "project": "APEX V1 — EV Architecture Decision Intelligence",
+  "release_stage": "PORTFOLIO_PUBLIC_DATA_RELEASE_CANDIDATE",
+  "platform": "Windows-first",
+  "workspaces": 33,
+  "original_algorithm": "ARCH-SHIELD-v1",
+  "predictive_ml_family": "Bootstrap neural-network surrogate ensemble",
+  "decision_campaign": "Architecture Verification Campaign",
+  "campaign_identity": "reliability margin + surrogate verification frontier",
+  "data_mode": "offline_reference",
+  "empirical_promotion": "REFERENCE_ONLY",
+  "human_authority": "VEHICLE_ARCHITECTURE_REVIEW",
+  "autonomous_execution": false,
+  "evidence_inventory": [
+    {
+      "path": "artifacts/tenx_validation.json",
+      "sha256": "5e2b7eee0a44065ebfbed134ad69aa2d85c68bfbb663583c86ca56b517d095b8"
+    },
+    {
+      "path": "artifacts/tenx_stress.json",
+      "sha256": "ddd3a2cec97f8aa31cfcafe014f8ca4a6e59c302d9c910634a863e25cfb23935"
+    },
+    {
+      "path": "artifacts/airlines15x_validation.json",
+      "sha256": "a7be6390d6d2ae70ab1150221a4e0c91a7ff01f025d81eb3275a517aae11f7aa"
+    },
+    {
+      "path": "artifacts/final_depth_validation.json",
+      "sha256": "57a6c5bca4522e911ae64f7c77cf3c73ab3af5cd5c735c62b6468b73cbd248f9"
+    },
+    {
+      "path": "artifacts/intelligence_validation.json",
+      "sha256": "d8dad7b11e8ddfdfe138a02ecff76ceaab0c8e7b4c12e5d68ca4a2ca7d0b927f"
+    },
+    {
+      "path": "artifacts/ui_identity_validation.json",
+      "sha256": "45cbc8e89ed650aa9699532948e98d798a47002769950bf94661b0a41139b536"
+    },
+    {
+      "path": "artifacts/frontend_diversity.json",
+      "sha256": "700d77fc065fd1fbae0aeb2cf237dcf38f13485937f4b35a21713373b4440dac"
+    },
+    {
+      "path": "artifacts/portfolio_validation.json",
+      "sha256": "bb06a2253011e4b2a9aea0cba8f4891d4e02fb1c77f6a3e9f028b1ca223d316c"
+    },
+    {
+      "path": "artifacts/governance_standard_validation.json",
+      "sha256": "89eba3c3f1bf121d2756ab6d5ac867397bcaf192e5bef1ce28566077c1c776f9"
+    },
+    {
+      "path": "PROJECT_METADATA.json",
+      "sha256": "ad5803ec706f04447208b27cf87c38a899a4e3b8437159fbb49809566ea85cdb"
+    },
+    {
+      "path": "docs/FRONTEND_DEMO_FLOW.md",
+      "sha256": "94ec5e8359058c34a6cfca182b059aac7b0a2f2518a283b25bd06bad93f2e80d"
+    },
+    {
+      "path": "artifacts/fortune50_capability_benchmark.json",
+      "sha256": "c8da9dc4fc10072a89b32f61600dd1863c9ffff9f7da68cb15e27893ed40bd76"
+    },
+    {
+      "path": "artifacts/enterprise_hardening.json",
+      "sha256": "25da473a7f48b424dc18a2528a08299b10e72b0067a633f171d2f7ffb398f0fb"
+    },
+    {
+      "path": "artifacts/frontend_demo_flow.json",
+      "sha256": "a61adcfda57168855a4b3f5516a0b07c4284a575ad046dfe4f55b676d04b86c8"
+    },
+    {
+      "path": "service/main.py",
+      "sha256": "f48f0d6b43fbdb65e0dcb763cc371a89e883ca3615b34314c8ed84cef89157aa"
+    }
+  ],
+  "claim_boundary": "Portfolio-grade analytical validation. External/domain validation and native dependency acceptance remain required where explicitly marked; autonomous operational execution is disabled.",
+  "product_ui_identity": "EV systems-design studio / architecture schematic",
+  "ai_agent": "Vehicle Design Council",
+  "agent_decision_policy": "surrogate-gated robust architecture verification",
+  "ml_lifecycle_endpoint": "/api/ml/lifecycle",
+  "agent_endpoint": "/api/agent/run",
+  "frontend_similarity_method": "5-token Jaccard after removing embedded workspace contract payload",
+  "max_pairwise_frontend_similarity": 0.1321,
+  "frontend_similarity_threshold": 0.2,
+  "data_backbone": "structured public data contracts + provenance + claim ledger + project-specific empirical case",
+  "claim_ledger": "data/provenance/CLAIM_LEDGER.md"
+}

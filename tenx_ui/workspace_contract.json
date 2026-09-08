@@ -1,0 +1,453 @@
+{
+  "actor": "Vehicle Systems Engineer",
+  "decision": "architecture release / HOLD",
+  "entity": "vehicle architecture",
+  "workspaces": [
+    {
+      "workspace": "Design Command",
+      "engineering_question": "What does Design Command show that would change the architecture release / HOLD for the current vehicle architecture scope?",
+      "method": "Integrated requirement-risk-cost decision queue with confidence-gated release state",
+      "evidence": "Evidence object: Integrated requirement-risk-cost decision queue with confidence-gated release state; compared with prediction uncertainty, baseline/counterfactual, provenance and current release/HOLD state.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable design command evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the Design Command evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "Requirements",
+      "engineering_question": "What does Requirements show that would change the architecture release / HOLD for the current vehicle architecture scope?",
+      "method": "Requirement decomposition, hard/soft threshold matrix and traceable requirement-to-KPI mapping",
+      "evidence": "Evidence object: Requirement decomposition, hard/soft threshold matrix and traceable requirement-to-KPI mapping; compared with prediction uncertainty, baseline/counterfactual, provenance and current release/HOLD state.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable requirements evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the Requirements evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "Vehicle Physics",
+      "engineering_question": "What does Vehicle Physics show that would change the architecture release / HOLD for the current vehicle architecture scope?",
+      "method": "Longitudinal road-load, tractive-force and energy-balance equations across drive conditions",
+      "evidence": "Evidence object: Longitudinal road-load, tractive-force and energy-balance equations across drive conditions; compared with prediction uncertainty, baseline/counterfactual, provenance and current release/HOLD state.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable vehicle physics evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the Vehicle Physics evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "Battery System",
+      "engineering_question": "What does Battery System show that would change the architecture release / HOLD for the current vehicle architecture scope?",
+      "method": "Pack energy/power sizing, C-rate, usable SOC window and battery mass/cost constraints",
+      "evidence": "Evidence object: Pack energy/power sizing, C-rate, usable SOC window and battery mass/cost constraints; compared with prediction uncertainty, baseline/counterfactual, provenance and current release/HOLD state.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable battery system evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the Battery System evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "Motor & Inverter",
+      "engineering_question": "What does Motor & Inverter show that would change the architecture release / HOLD for the current vehicle architecture scope?",
+      "method": "Peak/continuous power sizing and efficiency-loss propagation through the electric drivetrain",
+      "evidence": "Evidence object: Peak/continuous power sizing and efficiency-loss propagation through the electric drivetrain; compared with prediction uncertainty, baseline/counterfactual, provenance and current release/HOLD state.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable motor & inverter evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the Motor & Inverter evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "Gearing",
+      "engineering_question": "What does Gearing show that would change the architecture release / HOLD for the current vehicle architecture scope?",
+      "method": "Single-speed ratio feasibility sweep against launch torque, top speed and motor-speed limits",
+      "evidence": "Evidence object: Single-speed ratio feasibility sweep against launch torque, top speed and motor-speed limits; compared with prediction uncertainty, baseline/counterfactual, provenance and current release/HOLD state.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable gearing evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the Gearing evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "Aero & Energy",
+      "engineering_question": "What does Aero & Energy show that would change the architecture release / HOLD for the current vehicle architecture scope?",
+      "method": "Aerodynamic drag + rolling-resistance energy decomposition across representative speeds",
+      "evidence": "Evidence object: Aerodynamic drag + rolling-resistance energy decomposition across representative speeds; compared with prediction uncertainty, baseline/counterfactual, provenance and current release/HOLD state.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable aero & energy evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the Aero & Energy evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "Mass & Packaging",
+      "engineering_question": "What does Mass & Packaging show that would change the architecture release / HOLD for the current vehicle architecture scope?",
+      "method": "Component mass roll-up, payload allowance and packaging feasibility constraints",
+      "evidence": "Evidence object: Component mass roll-up, payload allowance and packaging feasibility constraints; compared with prediction uncertainty, baseline/counterfactual, provenance and current release/HOLD state.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable mass & packaging evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the Mass & Packaging evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "Thermal Envelope",
+      "engineering_question": "What does Thermal Envelope show that would change the architecture release / HOLD for the current vehicle architecture scope?",
+      "method": "Thermal/power derating envelope under ambient and sustained-load scenarios",
+      "evidence": "Evidence object: Thermal/power derating envelope under ambient and sustained-load scenarios; compared with prediction uncertainty, baseline/counterfactual, provenance and current release/HOLD state.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable thermal envelope evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the Thermal Envelope evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "Performance",
+      "engineering_question": "What does Performance show that would change the architecture release / HOLD for the current vehicle architecture scope?",
+      "method": "Physics-derived acceleration, range and energy-efficiency KPI evaluation",
+      "evidence": "Evidence object: Physics-derived acceleration, range and energy-efficiency KPI evaluation; compared with prediction uncertainty, baseline/counterfactual, provenance and current release/HOLD state.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable performance evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the Performance evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "Trade Space",
+      "engineering_question": "What does Trade Space show that would change the architecture release / HOLD for the current vehicle architecture scope?",
+      "method": "Mixed-variable candidate generation with feasibility screening before expensive simulation",
+      "evidence": "Evidence object: Mixed-variable candidate generation with feasibility screening before expensive simulation; compared with prediction uncertainty, baseline/counterfactual, provenance and current release/HOLD state.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable trade space evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the Trade Space evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "Pareto Frontier",
+      "engineering_question": "What does Pareto Frontier show that would change the architecture release / HOLD for the current vehicle architecture scope?",
+      "method": "Multi-objective Pareto search over cost, range, acceleration and efficiency",
+      "evidence": "Evidence object: Multi-objective Pareto search over cost, range, acceleration and efficiency; compared with prediction uncertainty, baseline/counterfactual, provenance and current release/HOLD state.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable pareto frontier evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the Pareto Frontier evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "Neural Surrogates",
+      "engineering_question": "What does Neural Surrogates show that would change the architecture release / HOLD for the current vehicle architecture scope?",
+      "method": "Bootstrap neural-network ensemble with holdout error and model-disagreement uncertainty",
+      "evidence": "Evidence object: Bootstrap neural-network ensemble with holdout error and model-disagreement uncertainty; compared with prediction uncertainty, baseline/counterfactual, provenance and current release/HOLD state.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable neural surrogates evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the Neural Surrogates evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "ARCH-SHIELD",
+      "engineering_question": "What does ARCH-SHIELD show that would change the architecture release / HOLD for the current vehicle architecture scope?",
+      "method": "Wilson lower-bound reliability certification and lexicographic robust architecture filter",
+      "evidence": "Evidence object: Wilson lower-bound reliability certification and lexicographic robust architecture filter; compared with prediction uncertainty, baseline/counterfactual, provenance and current release/HOLD state.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable arch-shield evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the ARCH-SHIELD evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "Robustness",
+      "engineering_question": "What does Robustness show that would change the architecture release / HOLD for the current vehicle architecture scope?",
+      "method": "Common-random-number Monte Carlo with reliability, violation and CVaR summaries",
+      "evidence": "Evidence object: Common-random-number Monte Carlo with reliability, violation and CVaR summaries; compared with prediction uncertainty, baseline/counterfactual, provenance and current release/HOLD state.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable robustness evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the Robustness evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "Sensitivity",
+      "engineering_question": "What does Sensitivity show that would change the architecture release / HOLD for the current vehicle architecture scope?",
+      "method": "Factor perturbation and local response sensitivity for design-variable influence",
+      "evidence": "Evidence object: Factor perturbation and local response sensitivity for design-variable influence; compared with prediction uncertainty, baseline/counterfactual, provenance and current release/HOLD state.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable sensitivity evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the Sensitivity evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "Manufacturability",
+      "engineering_question": "What does Manufacturability show that would change the architecture release / HOLD for the current vehicle architecture scope?",
+      "method": "Manufacturing-cost decomposition, architecture complexity and production feasibility review",
+      "evidence": "Evidence object: Manufacturing-cost decomposition, architecture complexity and production feasibility review; compared with prediction uncertainty, baseline/counterfactual, provenance and current release/HOLD state.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable manufacturability evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the Manufacturability evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "AI Design Council",
+      "engineering_question": "What does AI Design Council show that would change the architecture release / HOLD for the current vehicle architecture scope?",
+      "method": "Multi-role analytical orchestration across physics, ML, robustness and ARCH-SHIELD",
+      "evidence": "Evidence object: Multi-role analytical orchestration across physics, ML, robustness and ARCH-SHIELD; compared with prediction uncertainty, baseline/counterfactual, provenance and current release/HOLD state.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable ai design council evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the AI Design Council evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "Validation",
+      "engineering_question": "What does Validation show that would change the architecture release / HOLD for the current vehicle architecture scope?",
+      "method": "Holdout prediction metrics, physics invariants, robust-feasibility and regression gates",
+      "evidence": "Evidence object: Holdout prediction metrics, physics invariants, robust-feasibility and regression gates; compared with prediction uncertainty, baseline/counterfactual, provenance and current release/HOLD state.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable validation evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the Validation evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "Research Evidence",
+      "engineering_question": "What does Research Evidence show that would change the architecture release / HOLD for the current vehicle architecture scope?",
+      "method": "Ablation, baseline comparison, uncertainty, stress and claim-boundary ledger",
+      "evidence": "Evidence object: Ablation, baseline comparison, uncertainty, stress and claim-boundary ledger; compared with prediction uncertainty, baseline/counterfactual, provenance and current release/HOLD state.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable research evidence evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the Research Evidence evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "Release Review",
+      "engineering_question": "What does Release Review show that would change the architecture release / HOLD for the current vehicle architecture scope?",
+      "method": "Human engineering release gate with evidence fingerprint and autonomous-release block",
+      "evidence": "Evidence object: Human engineering release gate with evidence fingerprint and autonomous-release block; compared with prediction uncertainty, baseline/counterfactual, provenance and current release/HOLD state.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable release review evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the Release Review evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "Data Backbone",
+      "engineering_question": "Can the vehicle architecture / requirement release decision be traced to a reproducible external source rather than only a demo fixture?",
+      "method": "EPA source contract, schema/cache profile and empirical-vs-reference provenance state",
+      "evidence": "Evidence object: EPA source contract, schema/cache profile and empirical-vs-reference provenance state, with explicit external/reference data mode and claim boundary.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable data backbone evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the Data Backbone evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "Historical Intelligence",
+      "engineering_question": "How has technology, mass, efficiency and electrification trade-space trends changed across cohorts, runs or states?",
+      "method": "Model-year / candidate-history comparison of efficiency, cost and robust-feasibility evidence",
+      "evidence": "Evidence object: Model-year / candidate-history comparison of efficiency, cost and robust-feasibility evidence, with explicit external/reference data mode and claim boundary.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable historical intelligence evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the Historical Intelligence evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "Entity / Factor Explorer",
+      "engineering_question": "Which vehicle / architecture / requirement / uncertainty scenario carries the highest evidence concentration?",
+      "method": "Architecture/KPI ranking by confidence shortfall, cost premium and sensitivity contribution",
+      "evidence": "Evidence object: Architecture/KPI ranking by confidence shortfall, cost premium and sensitivity contribution, with explicit external/reference data mode and claim boundary.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable entity / factor explorer evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the Entity / Factor Explorer evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "Empirical Case Study",
+      "engineering_question": "Which candidate architecture closes the largest gap to empirical vehicle benchmarks?",
+      "method": "MY2024 technology benchmark interpreted against the modeled architecture frontier",
+      "evidence": "Evidence object: MY2024 technology benchmark interpreted against the modeled architecture frontier, with explicit external/reference data mode and claim boundary.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable empirical case study evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the Empirical Case Study evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "External Validation",
+      "engineering_question": "When does the cheapest design fail reliability confidence despite attractive nominal KPIs?",
+      "method": "EPA refresh, empirical benchmark gap analysis and model-vs-observation claim checks",
+      "evidence": "Evidence object: EPA refresh, empirical benchmark gap analysis and model-vs-observation claim checks, with explicit external/reference data mode and claim boundary.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable external validation evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the External Validation evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "Data Refresh",
+      "engineering_question": "Is the current analytical state fresh enough to support the vehicle architecture / requirement release decision?",
+      "method": "Versioned EPA data refresh, checksum, schema drift and evidence-promotion workflow",
+      "evidence": "Evidence object: Versioned EPA data refresh, checksum, schema drift and evidence-promotion workflow, with explicit external/reference data mode and claim boundary.",
+      "required_inputs": [
+        "vehicle architecture",
+        "validated source/provenance",
+        "current constraints/state"
+      ],
+      "decision_output": "Auditable data refresh evidence for architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer reviews the Data Refresh evidence, drills into the responsible vehicle architecture, then approves, holds or escalates the architecture release / HOLD."
+    },
+    {
+      "workspace": "Architecture Campaign",
+      "engineering_question": "Which architecture remains confidence-certified across model/scenario realizations?",
+      "method": "Multi-seed neural-surrogate + uncertainty scenarios + ARCH-SHIELD selection",
+      "evidence": "Architecture selection stability, reliability lower bound, cost and surrogate error",
+      "required_inputs": [
+        "vehicle architecture / requirement set",
+        "validated empirical/reference evidence",
+        "current decision constraints"
+      ],
+      "decision_output": "Auditable architecture campaign evidence for vehicle architecture release / HOLD",
+      "operator_action": "Advance only an architecture whose confidence certification is stable."
+    },
+    {
+      "workspace": "Requirement Margin",
+      "engineering_question": "How much reliability headroom exists above each hard requirement target?",
+      "method": "Finite-sample reliability lower-bound margin aggregated across verification campaigns",
+      "evidence": "Minimum/mean LCB margin, target gap and selected architecture",
+      "required_inputs": [
+        "vehicle architecture / requirement set",
+        "validated empirical/reference evidence",
+        "current decision constraints"
+      ],
+      "decision_output": "Auditable requirement margin evidence for vehicle architecture release / HOLD",
+      "operator_action": "HOLD release if confidence margin is too small for design maturity."
+    },
+    {
+      "workspace": "Surrogate Verification",
+      "engineering_question": "Where can neural surrogate error change the architecture choice?",
+      "method": "Cross-seed normalized RMSE and model-disagreement review before exact-physics escalation",
+      "evidence": "Range/acceleration/cost RMSE, disagreement and selected design stability",
+      "required_inputs": [
+        "vehicle architecture / requirement set",
+        "validated empirical/reference evidence",
+        "current decision constraints"
+      ],
+      "decision_output": "Auditable surrogate verification evidence for vehicle architecture release / HOLD",
+      "operator_action": "Escalate high-disagreement regions to exact physics before release."
+    },
+    {
+      "workspace": "Cost\u2013Confidence Frontier",
+      "engineering_question": "What manufacturing-cost premium buys meaningful reliability confidence?",
+      "method": "Robustness premium compared with finite-sample reliability margin and feasibility",
+      "evidence": "Selected cost, cheapest-design gap, reliability margin and robust-feasibility evidence",
+      "required_inputs": [
+        "vehicle architecture / requirement set",
+        "validated empirical/reference evidence",
+        "current decision constraints"
+      ],
+      "decision_output": "Auditable cost\u2013confidence frontier evidence for vehicle architecture release / HOLD",
+      "operator_action": "Accept a cost premium only when it purchases measurable reliability confidence."
+    },
+    {
+      "workspace": "Verification Matrix",
+      "engineering_question": "Which requirements are simulation-cleared, confidence-cleared or still open?",
+      "method": "Requirement-level status matrix combining scenarios, confidence bound and validation mode",
+      "evidence": "Pass/HOLD state by requirement with evidence source and pending native gates",
+      "required_inputs": [
+        "vehicle architecture / requirement set",
+        "validated empirical/reference evidence",
+        "current decision constraints"
+      ],
+      "decision_output": "Auditable verification matrix evidence for vehicle architecture release / HOLD",
+      "operator_action": "Close or escalate each requirement before architecture release."
+    },
+    {
+      "workspace": "Architecture Decision Record",
+      "engineering_question": "Can architecture approval be reproduced from evidence through AI review?",
+      "method": "Traceable surrogate \u2192 scenarios \u2192 ARCH-SHIELD \u2192 exact-physics/Pareto escalation dossier",
+      "evidence": "Scenario matrix, chosen design, alternative, uncertainty, limitations and authority",
+      "required_inputs": [
+        "vehicle architecture / requirement set",
+        "validated empirical/reference evidence",
+        "current decision constraints"
+      ],
+      "decision_output": "Auditable architecture decision record evidence for vehicle architecture release / HOLD",
+      "operator_action": "Vehicle Systems Engineer signs or rejects the architecture recommendation."
+    },
+    {
+      "workspace": "Vehicle Benchmark Backbone",
+      "engineering_question": "Is the vehicle model calibrated closely enough to public benchmark targets for surrogate-led screening?",
+      "method": "Tesla public specification validation + explicit assumption ledger + benchmark error gate for ARCH-SHIELD",
+      "evidence": "Variant targets, mass/range/acceleration specs, raw hash, explicit assumed parameters, benchmark residuals and exact-physics escalation state.",
+      "required_inputs": [
+        "validated public source/provenance",
+        "raw/canonical hash and schema state",
+        "current model/algorithm readiness"
+      ],
+      "decision_output": "Auditable vehicle benchmark backbone evidence",
+      "operator_action": "Vehicle Systems Engineer requires exact physics verification whenever benchmark error exceeds the release band."
+    }
+  ],
+  "project_title": "APEX V1 \u2014 EV Architecture Decision Intelligence",
+  "campaign": "Architecture Verification Campaign",
+  "campaign_identity": "reliability margin + surrogate verification frontier",
+  "depth_phase": "PROJECT_NATIVE_1P2_EXPANSION"
+}

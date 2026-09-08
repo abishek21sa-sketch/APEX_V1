@@ -1,0 +1,13 @@
+[
+  {
+    "project": "APEX V1",
+    "company_context": "Tesla",
+    "primary_dataset": "Tesla public vehicle specs + Tesla 2025 SEC operating data",
+    "dataset_id": null,
+    "instances": "public vehicle variants / annual company metrics",
+    "features": "range, acceleration, mass, cargo, charging power plus production/delivery scale",
+    "license": "Public web/SEC facts; cite source and date",
+    "company_public_file": "company_public/tesla_model_y_current_specs.csv",
+    "intended_use": "Vehicle-physics calibration/validation targets, surrogate sanity checks, architecture comparison, robustness and cost/performance trade-space."
+  }
+]

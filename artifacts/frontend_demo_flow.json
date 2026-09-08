@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "project": "APEX V1 — EV Architecture Decision Intelligence",
+  "visual_identity": "EV systems-design studio / architecture schematic",
+  "native_entrypoint": "frontend/src/routes/robust/+page.svelte",
+  "shared_behavioral_contract": [
+    "input",
+    "evidence",
+    "decision",
+    "counterfactual",
+    "human approval"
+  ],
+  "project_specific_flow": [
+    "inspect vehicle architecture",
+    "run robust reliability gate",
+    "compare baseline and counterfactual",
+    "review saved design certificate",
+    "approve architecture review"
+  ],
+  "not_shared": [
+    "theme",
+    "layout",
+    "domain vocabulary",
+    "visualization type"
+  ],
+  "signature_endpoint": "/governance/signature"
+}

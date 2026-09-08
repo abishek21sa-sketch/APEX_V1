@@ -1,0 +1,12 @@
+{
+  "local_evidence": "artifacts/portfolio_validation.json",
+  "entity_grain": "vehicle architecture / design scenario / KPI",
+  "historical_intelligence": "design-candidate, scenario and robust-feasibility evidence",
+  "decision": "vehicle architecture release / hold",
+  "actor": "Vehicle Systems Engineer",
+  "case_questions": [
+    "Which vehicle architecture / design scenario / KPI shows the strongest empirical shift or evidence concentration?",
+    "Does the predictive + authored-algorithm + OR decision differ from the simple baseline for vehicle architecture release / hold?",
+    "What evidence would cause the Vehicle Systems Engineer to HOLD rather than approve?"
+  ]
+}

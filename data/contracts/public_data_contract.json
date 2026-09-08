@@ -1,0 +1,27 @@
+{
+  "dataset": "Tesla public Model Y specifications",
+  "case_study": "Tesla Model Y Benchmark-Calibrated Architecture Study",
+  "raw_directory": "data/raw/tesla",
+  "required_primary_files": [
+    "tesla_model_y_current_specs.csv"
+  ],
+  "schema_policy": {
+    "numeric_missing_values": "allowed but must be profiled/imputed inside train-only pipeline",
+    "empty_file": "reject",
+    "hash": "SHA-256",
+    "source_mode": "explicit"
+  },
+  "decision_chain": [
+    "real observed data",
+    "derived diagnostics",
+    "predictive model",
+    "repository-authored original algorithm",
+    "OR/simulation escalation",
+    "analytical AI challenge",
+    "human approval/HOLD"
+  ],
+  "original_algorithm": "ARCH-SHIELD-v1",
+  "claim_boundary": "Tesla public specifications are benchmark targets only. Battery, motor, drag-area and gear assumptions are repository assumptions, not Tesla proprietary parameters.",
+  "human_authority": "VEHICLE_ARCHITECTURE_REVIEW",
+  "autonomous_execution": false
+}

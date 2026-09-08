@@ -1,0 +1,25 @@
+.venv/
+.venv-clean-test/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+scratch_dataset.csv
+
+# Root .env -- docker-compose.yml reads this automatically for ANTHROPIC_API_KEY
+.env
+.env.*
+!.env.example
+
+# Rust (backend/)
+backend/target/
+
+# Node / SvelteKit (frontend/)
+frontend/node_modules/
+frontend/.svelte-kit/
+frontend/build/
+frontend/.env
+frontend/.env.*
+!frontend/.env.example

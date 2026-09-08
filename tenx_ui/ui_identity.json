@@ -1,0 +1,8 @@
+{
+  "project": "APEX V1 \u2014 EV Architecture Decision Intelligence",
+  "ui_namespace": "ev-",
+  "signature_marker": "EV SYSTEMS DESIGN STUDIO",
+  "workspace_count": 34,
+  "max_allowed_pairwise_similarity": 0.2,
+  "product_identity": "EV systems-design studio / architecture schematic"
+}

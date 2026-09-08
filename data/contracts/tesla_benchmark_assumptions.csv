@@ -1,0 +1,4 @@
+variant,battery_usable_kwh_assumption,motor_power_kw_assumption,drag_coefficient_assumption,frontal_area_m2_assumption,gear_ratio_assumption,claim_category
+Model Y Rear-Wheel Drive,72,220,0.24,2.78,9.0,ASSUMPTION
+Model Y Premium AWD,79,330,0.24,2.78,9.0,ASSUMPTION
+Model Y Performance AWD,79,430,0.24,2.78,9.0,ASSUMPTION
