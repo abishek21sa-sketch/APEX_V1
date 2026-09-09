@@ -1,32 +1,3 @@
-## AIRLINES-1.5× DEPTH CANDIDATE
-
-Current release `APEX_V1_FORTUNE50_AIRLINES15X_RC4` adds a live empirical/historical analysis layer, 26+ substantive workspaces, project-native domain diagnostics, external-source refresh/provenance, and AI decisions grounded in explicit evidence mode. See `docs/AIRLINES_15X_RELEASE.md`.
-
-# Fortune-50 TENX analytical release
-
-**Internal portfolio target:** Math 10/10 · UI 10/10 · AI 10/10, subject to the evidence boundaries below.
-
-- Repository-authored algorithm: **ARCH-SHIELD-v1**
-- Unique predictive-learning family: **Bootstrap neural-network surrogate ensemble**
-- Analytical AI role: **AI Vehicle Design Council**
-- TENX workspaces: **21**
-- Operational authority: **human-gated; autonomous execution blocked**
-
-### Test the TENX layer on Windows
-
-```powershell
-Set-ExecutionPolicy -Scope Process Bypass
-.\scripts\windows_tenx_acceptance.ps1
-.\scripts\start_tenx_workstation.ps1
-```
-
-The first command validates prediction → decision → counterfactual → OR escalation → user-aid behavior and a five-seed originality stress suite. The second opens the dedicated analytical workstation.
-
-> **Evidence boundary:** TENX bundled metrics are synthetic/reference validation, not field deployment validation. Existing native Windows, Julia/Go/Rust/frontend, external-data, clinical, or production gates remain applicable where documented.
-
----
-
-
 ## Portfolio RC1 — APEX-RDS robust architecture selection
 
 APEX now adds APEX-RDS on top of nominal Pareto search. A shortlisted architecture set is re-evaluated under common uncertainty scenarios and ranked lexicographically by robust feasibility, reliability-target shortfall, upper-tail CVaR of normalized requirement violation, mean violation, and only then manufacturing cost. This prevents a cheaper nominal design from outranking an architecture that actually satisfies the governed reliability envelope.
@@ -406,16 +377,29 @@ docker compose up --build
 # then open http://localhost:3000
 ```
 
-**Hosted deployment (Vercel + Render):**
+**Hosted deployment (Vercel + Render):** live today at
+`apex-orchestrator.onrender.com` (Rust) + `apex-scientific-service.onrender.com`
+(Python), both public Render web services -- `render.yaml` at the repo root
+deploys both as a Render Blueprint.
 
-- Deploy `frontend/` as the Vercel project root.
-- Set Vercel's `VITE_API_BASE` to the Render `apex-orchestrator` URL followed
-  by `/api`.
-- Deploy the root `render.yaml` as a Render Blueprint. It creates the Python
-  scientific service and the Rust orchestration service separately.
-- Verify `/api/health` on the orchestration URL and `/health` on the Python
-  service before opening the Vercel URL. The browser should never fall back to
-  a localhost API in production.
+- **Render** -- apply `render.yaml` (New -> Blueprint, point at this repo).
+  `apex-orchestrator` (the Rust tier, Docker) is the only service the browser
+  talks to; it reaches `apex-scientific-service` over that service's public
+  URL via the `APEX_PYTHON_SERVICE_URL` env var, not a private network.
+- **Vercel** -- import `frontend/` (Root Directory: `frontend`). Vercel's
+  SvelteKit zero-config detection picks this up automatically; the adapter
+  switches at build time (`frontend/vite.config.ts`) to `@sveltejs/adapter-vercel`
+  because Vercel's build environment sets `VERCEL=1` -- local dev and the
+  Docker build above are untouched and keep using `@sveltejs/adapter-node`.
+  Set `VITE_API_BASE` on the Vercel project to the orchestrator's URL + `/api`
+  (e.g. `https://apex-orchestrator.onrender.com/api`) if it ever changes --
+  `frontend/src/lib/api.ts` already falls back to that same URL for any
+  production build where the env var isn't set, so the browser never silently
+  falls back to `localhost`.
+- **CORS.** `backend/src/lib.rs` currently sets a permissive `CorsLayer`
+  (`allow_origin(Any)`). Known limitation, not yet scoped down to the deployed
+  Vercel origin -- fine for a demo, worth tightening before treating this as
+  production-hardened.
 
 **Phase 8, three terminals** (each service needs the ones below it running):
 
